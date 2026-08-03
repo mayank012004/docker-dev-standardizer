@@ -1,33 +1,29 @@
+<div align="center">
+
 # 🐳 Docker-Based Development Environment Standardizer
 
-> A Dockerized Student Management System built using Django and PostgreSQL to demonstrate how Docker Compose creates a standardized development environment and eliminates the "Works on My Machine" problem.
+### Student Management System using Django, PostgreSQL & Docker Compose
 
-![Python](https://img.shields.io/badge/Python-3.12-blue?logo=python)
-![Django](https://img.shields.io/badge/Django-6.0-success?logo=django)
-![Docker](https://img.shields.io/badge/Docker-Compose-2496ED?logo=docker)
-![PostgreSQL](https://img.shields.io/badge/PostgreSQL-4169E1?logo=postgresql)
-![License](https://img.shields.io/badge/License-Educational-green)
+<img src="https://img.shields.io/badge/Python-3.12-blue?style=for-the-badge&logo=python">
+<img src="https://img.shields.io/badge/Django-6.0-success?style=for-the-badge&logo=django">
+<img src="https://img.shields.io/badge/PostgreSQL-Database-blue?style=for-the-badge&logo=postgresql">
+<img src="https://img.shields.io/badge/Docker-Compose-2496ED?style=for-the-badge&logo=docker">
 
 ---
 
-# 📖 Project Overview
+A Dockerized Student Management System demonstrating how Docker Compose creates a standardized development environment and solves the **"Works on My Machine"** problem.
 
-This project demonstrates how Docker can be used to standardize development environments across different systems.
+</div>
 
-Instead of installing Python, Django, PostgreSQL and other dependencies manually on every developer's computer, everything runs inside Docker containers.
+---
 
-The project implements a **Student Management System** where users can:
+# 📖 Project Description
 
-- Add students
-- View students
-- Edit student information
-- Delete students
+This project demonstrates how Docker Compose standardizes development environments by containerizing a Django application with PostgreSQL.
 
-The application uses:
+Instead of installing Python, Django, PostgreSQL, and other dependencies on every developer's machine, the application runs inside Docker containers.
 
-- Django for backend
-- PostgreSQL as database
-- Docker Compose for container orchestration
+This ensures every developer works in an identical environment regardless of operating system.
 
 ---
 
@@ -35,147 +31,154 @@ The application uses:
 
 - Standardize development environments
 - Eliminate dependency conflicts
-- Solve the "Works on My Machine" problem
-- Learn Docker containerization
-- Learn Django web development
-- Learn PostgreSQL integration
-- Understand Docker Compose networking
+- Learn Docker & Docker Compose
+- Understand Django architecture
+- Integrate PostgreSQL with Django
+- Perform CRUD operations
+- Deploy applications consistently
 
 ---
 
 # ✨ Features
 
-- ✅ Add Student
-- ✅ Display Student List
-- ✅ Edit Student Details
-- ✅ Delete Student
-- ✅ PostgreSQL Database
-- ✅ Dockerized Application
-- ✅ Responsive Bootstrap UI
-- ✅ Django Admin Panel
+✅ Add Student
+
+✅ View Students
+
+✅ Edit Student
+
+✅ Delete Student
+
+✅ PostgreSQL Database
+
+✅ Dockerized Environment
+
+✅ Bootstrap User Interface
+
+✅ Django Admin Panel
 
 ---
 
-# 🛠️ Technologies Used
+# 🛠 Tech Stack
 
 | Technology | Purpose |
 |------------|---------|
 | Python 3.12 | Programming Language |
-| Django 6 | Web Framework |
+| Django 6 | Backend Framework |
 | PostgreSQL | Database |
 | Docker | Containerization |
 | Docker Compose | Multi-container Management |
-| Bootstrap 5 | Frontend Styling |
-| HTML5 | Frontend |
-| CSS3 | Styling |
+| Bootstrap | Frontend UI |
+| HTML/CSS | Interface |
+| Git | Version Control |
+| GitHub | Code Hosting |
+
+---
+
+# 🏗 System Architecture
+
+```
+             User
+               │
+               ▼
+       Web Browser
+               │
+               ▼
+      Django Container
+               │
+               ▼
+     PostgreSQL Container
+               │
+               ▼
+          Student Database
+```
+
+---
+
+# 🐳 Docker Architecture
+
+```
++-------------------------------------+
+|          Docker Compose             |
++-------------------------------------+
+         │                 │
+         ▼                 ▼
+
++-----------------+   +-------------------+
+| Django Container|   | PostgreSQL        |
+| Port : 8000     |   | Port : 5432       |
++-----------------+   +-------------------+
+```
 
 ---
 
 # 📂 Project Structure
 
 ```
-docker-dev-standardizer/
+docker-dev-standardizer
 │
 ├── Dockerfile
 ├── docker-compose.yml
 ├── README.md
 │
-└── app/
+└── app
+    │
     ├── manage.py
-    ├── config/
     │
-    ├── students/
-    │   ├── models.py
-    │   ├── views.py
-    │   ├── urls.py
-    │   ├── admin.py
-    │   ├── templates/
-    │   │
-    │   └── migrations/
+    ├── config
+    │      settings.py
+    │      urls.py
     │
-    └── db.sqlite3
+    └── students
+           │
+           ├── models.py
+           ├── views.py
+           ├── urls.py
+           ├── admin.py
+           ├── migrations
+           │
+           └── templates
+                 └── students
+                        index.html
+                        edit.html
 ```
 
 ---
 
-# 🏗️ Architecture
-
-```
-                User
-                  │
-                  ▼
-           Browser (localhost:8000)
-                  │
-                  ▼
-          Docker Container
-          Django Application
-                  │
-                  ▼
-          PostgreSQL Container
-                  │
-                  ▼
-             Student Database
-```
-
----
-
-# ⚙️ Docker Architecture
-
-```
-+--------------------------------------+
-|          Docker Compose              |
-+--------------------------------------+
-          │                 │
-          ▼                 ▼
-+----------------+   +------------------+
-| Django         |   | PostgreSQL       |
-| Container      |<->| Container        |
-| Port : 8000    |   | Port : 5432      |
-+----------------+   +------------------+
-```
-
----
-
-# 🗄️ Database Design
+# 🗄 Database Schema
 
 Student Table
 
 | Field | Type |
 |--------|------|
-| id | Integer |
-| name | CharField |
-| roll_number | Integer |
-| department | CharField |
+| ID | Integer |
+| Name | CharField |
+| Roll Number | Integer |
+| Department | CharField |
 
 ---
 
-# 🚀 How to Run
+# 🚀 Installation
 
-## Clone Repository
+Clone the repository
 
 ```bash
 git clone https://github.com/mayank012004/docker-dev-standardizer.git
 ```
 
----
-
-## Go inside project
+Move into the project
 
 ```bash
 cd docker-dev-standardizer
 ```
 
----
-
-## Start Docker
+Start Docker
 
 ```bash
 docker compose up
 ```
 
----
-
-## Open Browser
+Visit
 
 ```
 http://localhost:8000
@@ -187,155 +190,90 @@ http://localhost:8000
 
 ## Home Page
 
-(Add Screenshot Here)
+_Add screenshot here_
 
 ---
 
 ## Student List
 
-(Add Screenshot Here)
+_Add screenshot here_
 
 ---
 
 ## Edit Student
 
-(Add Screenshot Here)
+_Add screenshot here_
 
 ---
 
 ## Django Admin
 
-(Add Screenshot Here)
+_Add screenshot here_
 
 ---
 
-# 🧠 Challenges Faced
+# ⚡ Challenges Faced
 
 ### 1. Django App Not Detected
 
-Problem:
-
-- Students app wasn't recognized.
-
-Solution:
-
-- Added `'students'` to `INSTALLED_APPS`.
+✔ Added students app in INSTALLED_APPS.
 
 ---
 
 ### 2. TemplateDoesNotExist Error
 
-Problem:
-
-```
-TemplateDoesNotExist
-```
-
-Solution:
-
-- Created proper template folder structure:
-
-```
-students/
-    templates/
-        students/
-            index.html
-```
+✔ Corrected template directory structure.
 
 ---
 
 ### 3. URL Routing Issue
 
-Problem:
-
-Django couldn't find application URLs.
-
-Solution:
-
-Configured:
-
-```
-config/urls.py
-```
-
-and
-
-```
-students/urls.py
-```
-
-correctly.
+✔ Configured project and application URLs.
 
 ---
 
-### 4. Permission Denied
+### 4. File Permission Error
 
-Problem:
-
-VS Code couldn't save files.
-
-Solution:
-
-Corrected file permissions and edited files from the appropriate project directory.
+✔ Fixed Linux file permissions.
 
 ---
 
-### 5. Duplicate Roll Number Error
+### 5. Duplicate Roll Number
 
-Problem:
-
-```
-IntegrityError
-```
-
-Solution:
-
-Deleted duplicate records from the database and ensured unique roll numbers.
+✔ Removed duplicate records and maintained unique roll numbers.
 
 ---
 
-### 6. Git Authentication Failed
+### 6. GitHub Authentication
 
-Problem:
-
-GitHub no longer accepts passwords.
-
-Solution:
-
-Generated a Personal Access Token (PAT) and authenticated Git securely.
+✔ Used Personal Access Token (PAT) instead of password.
 
 ---
 
 # 📚 Learning Outcomes
 
-Through this project, I learned:
-
 - Docker Basics
-- Docker Containers
 - Docker Compose
 - Container Networking
-- Volume Mounting
-- Environment Standardization
-- Django MVC Architecture
+- PostgreSQL Integration
 - Django ORM
 - CRUD Operations
-- PostgreSQL Integration
 - Git Version Control
-- GitHub Repository Management
+- GitHub Workflow
+- Linux Commands
 
 ---
 
 # 🔮 Future Enhancements
 
-- Student Login
 - Authentication
-- Search Student
-- Pagination
-- Profile Picture Upload
+- Student Login
+- Search Functionality
 - REST API
-- Docker Swarm Deployment
+- Docker Swarm
 - Kubernetes Deployment
-- CI/CD Pipeline using GitHub Actions
+- CI/CD Pipeline
+- Cloud Deployment (AWS)
 
 ---
 
@@ -343,7 +281,7 @@ Through this project, I learned:
 
 **Mayank Singh Bora**
 
-B.Tech CSE (Cloud Computing & Virtualization Technology)
+B.Tech Computer Science Engineering
 
 UPES, Dehradun
 
@@ -353,6 +291,8 @@ https://github.com/mayank012004
 
 ---
 
-# ⭐ If you found this project useful
+<div align="center">
 
-Please consider giving it a ⭐ on GitHub.
+### ⭐ If you found this project useful, please consider giving it a Star ⭐
+
+</div>
